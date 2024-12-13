@@ -18,7 +18,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         fetchNotes()
     }
 
-    private fun fetchNotes() {
+    fun fetchNotes() {
         viewModelScope.launch {
             try {
                 val notes = noteDAO.getAllNotes()

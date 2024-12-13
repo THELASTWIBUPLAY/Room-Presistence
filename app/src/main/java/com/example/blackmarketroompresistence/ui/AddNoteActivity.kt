@@ -1,5 +1,6 @@
 package com.example.blackmarketroompresistence.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -63,7 +64,7 @@ class AddNoteActivity : AppCompatActivity() {
             try {
                 noteDatabase.NoteDao().insert(note)
                 runOnUiThread {
-                    Toast.makeText(this@AddNoteActivity, "Note Saved Successfully", Toast.LENGTH_SHORT).show()
+                    setResult(Activity.RESULT_OK)
                     finish()
                 }
             } catch (e: Exception) {
